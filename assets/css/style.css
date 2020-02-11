@@ -1,0 +1,59 @@
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #050210;
+}
+
+.circleAnimacija {
+margin: 2rem auto;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    background: #333;
+    background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+    position: relative;
+    box-shadow:0 0 80px rgba(255,255,255,.6);
+    animation: spinAll 1.1s infinite linear;
+
+}
+
+.circleAnimacija:after {
+  background-color:  #050210;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    content: '';
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  animation: mymove 1s infinite;
+  filter:blur(1);
+}
+
+@keyframes spinAll {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  50% { 
+    transform: rotate(180deg);
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+@keyframes mymove {
+  from {
+    box-shadow: inset 0 0 0 100px #050210;
+  }
+  to {
+    box-shadow: inset 0 0 0 0px rgba(255,255,255,.1);
+  }
+}
